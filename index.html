@@ -1,0 +1,43 @@
+import streamlit as st
+import streamlit.components.v1 as components
+
+# Page configuration
+st.set_page_config(
+    page_title="MBTI 단짝 포켓몬 찾기",
+    page_icon="⚡",
+    layout="centered"
+)
+
+# 16가지 MBTI별 단짝 포켓몬 데이터베이스
+# 깃허브 Raw 이미지 URL (PokeAPI 공식 아트워크 - 항상 안정적으로 로드됨)
+POKEMON_DATA = {
+    "ISTJ": {
+        "name_ko": "아머까오",
+        "name_en": "Corviknight",
+        "types": ["비행", "강철"],
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/823.png",
+        "traits": "책임감이 강하고 침착하며 질서를 중시하는 택시 포켓몬입니다.",
+        "reason": "원칙을 지키고 단단한 신뢰감을 주는 ISTJ와 철저하게 맡은 임무를 완수하는 아머까오는 최고의 비즈니스 파트너이자 친구가 됩니다."
+    },
+    "ISFJ": {
+        "name_ko": "해피너스",
+        "name_en": "Blissey",
+        "types": ["노말"],
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/242.png",
+        "traits": "상처받은 이를 정성껏 돌보는 사랑과 헌신의 포켓몬입니다.",
+        "reason": "주변 사람들을 섬세하고 따뜻하게 챙기는 ISFJ의 세심함은 해피너스의 포근하고 따스한 마음과 완벽히 일치합니다."
+    },
+    "INFJ": {
+        "name_ko": "가디안",
+        "name_en": "Gardevoir",
+        "types": ["초능력", "페어리"],
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/282.png",
+        "traits": "트레이너를 지키기 위해서라면 모든 힘을 다하는 깊은 신뢰의 포켓몬입니다.",
+        "reason": "깊은 통찰력과 타인을 향한 진정성을 가진 INFJ에게, 트레이너의 마음을 예리하게 감지하고 감싸주는 가디안은 영혼의 단짝입니다."
+    },
+    "INTJ": {
+        "name_ko": "후딘",
+        "name_en": "Alakazam",
+        "types": ["초능력"],
+        "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png",
+        "traits": "IQ 5000의 뛰어난 지능으로
